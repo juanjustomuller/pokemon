@@ -1,0 +1,81 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url('../../img/fondo-estilo-comico-diseno-plano_52683-53321.avif'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.filtersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .filterSelect {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+
+  .filterSelect:hover {
+    border: 2px solid #ffc107;
+  }
+
+  .reloadButton {
+    background-color: #000;
+    color: #ccc;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+  }
+  
+  .reloadIcon {
+    margin-right: 5px;
+  }
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+    margin: 20px auto; 
+  }
+  
+  .cardLink {
+    flex-basis: calc(50% - 20px);
+    text-decoration: none;
+  }
+
+  .cardRow {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px; /* Ajusta este valor según tu diseño */
+    margin: 0 auto;
+}
+
+.paginadoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajusta este valor según tu diseño */
+}
