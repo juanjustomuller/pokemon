@@ -1,0 +1,110 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url('../../img/fondo-estilo-comico-diseno-plano_52683-53321.avif'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.containerButton{
+  margin-right: 65rem;
+}
+
+
+.filtersContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .filterSelect {
+    margin: 10px;
+    width: 80px;
+    height: 30px;
+    border: 3px solid #ffc107;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 0.9em;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
+      rgba(0, 0, 0, 0.3) 5px 1px 10px 3px, rgba(1, 0, 0, 0.2) 0px -1px 2px inset;
+  }
+  
+
+  .filterSelect:hover {
+    background: #ffc107;
+    color: white;
+    font-size: 1em;
+  }
+
+  .recargar {
+    color: white;
+    background-color: rgb(39, 39, 39);
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    padding-left: 10px;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    height: 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
+      rgba(0, 0, 0, 0.3) 5px 1px 10px 3px, rgba(1, 0, 0, 0.2) 0px -1px 2px inset;
+  }
+
+  .recargar:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  
+  .reloadIcon {
+    margin-top: 8px;
+  }
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+    margin: 20px auto; 
+  }
+  
+  .cardLink {
+    flex-basis: calc(50% - 20px);
+    text-decoration: none;
+  }
+
+  .cardRow {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: -100px; /* Ajusta este valor según tu diseño */
+    margin: 0 auto;
+}
+
+.paginadoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajusta este valor según tu diseño */
+}
+
+
+.paginado:hover {
+  cursor: pointer;
+  background-color: #333;
+}

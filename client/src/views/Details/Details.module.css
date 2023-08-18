@@ -1,0 +1,177 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.containerCompleto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../img/fondo-estilo-comico-diseno-plano_52683-53321.avif'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.spanBo {
+    text-decoration: none;
+}
+
+.buttonVolver {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    margin-top: 20px;
+    margin-left: 30rem;
+}
+
+.buttonVolver:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+.volverSpan {
+    margin-bottom: -9px;
+}
+
+.bodyDetail {
+    display: flex;
+    justify-content: center;
+}
+
+.containerDetail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 400px;
+    margin: 6%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+}
+.containerDetail {
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+}
+
+.backgroundDetail {
+    text-align: center;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(166deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(147, 147, 147, 1) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+
+}
+
+.imageDetail {
+    width: 300px;
+    height: auto;
+    margin-bottom: 70px;
+}
+
+.contentDetail {
+    background: whitesmoke;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+    
+    margin-top: 8px;
+}
+
+.pokemonNameDetail {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 10px;
+    color: rgb(71, 71, 72);
+    text-transform: capitalize;
+    position: relative;
+}
+
+.pokemonType {
+    /*background: rgb(197, 24, 24);*/
+    padding: 7px;
+    margin-left: 110px;
+    margin-bottom: 55px;
+    margin-top: 30px;
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    text-transform: capitalize;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+}
+
+.pokemonStats {
+    text-align: start;
+    margin-top: -45px;
+}
+
+.pokemonStats p {
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+span {
+    font-weight: 500;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.containerLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
