@@ -12,7 +12,7 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const pokemons = useSelector((state) => state.pokemons)   //en pokemons traeme el estado de pokemons
-    const [orden, setOrden] = useState("");  //estado local vacio, q solo lo voy a usar es para cuando yo setee esta pagina me modifique el estado local y se renderice
+    const [orden, setOrden] = useState("");   //estado local vacio, q solo lo voy a usar es para cuando yo setee esta pagina me modifique el estado local y se renderice
     const allTypes = useSelector((state) => state.types);
     
     //console.log("All Types:", allTypes);

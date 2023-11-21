@@ -6,7 +6,7 @@ import {
     GET_TYPES,
     FILTER_BY_TYPE,
     FILTER_CREATED,
-    GET_NAME_POKEMONS,
+    GET_NAME_POKEMONS,  
     GET_DETAIL,
 } from "./actions";
 
