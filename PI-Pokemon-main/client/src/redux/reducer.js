@@ -6,7 +6,7 @@ import {
     GET_TYPES,
     FILTER_BY_TYPE,
     FILTER_CREATED,
-    GET_NAME_POKEMONS,
+    GET_NAME_POKEMONS,  
     GET_DETAIL,
 } from "./actions";
 
@@ -15,8 +15,6 @@ const initialState = {
     pokemonsBackUp: [],      //copia de todos los pokemons sin tocar 
     types: [],
     detail: {},
-    //currentPage: 0,         //pagina actual iniciada en 0
-    //pokemonsFiltered: [],  //copia de todos los pokemons filtrados por alguna funcion
 }
 
 
@@ -30,22 +28,27 @@ const rootReducer = (state = initialState, action) => {
             }
 
         case FILTER_CREATED: 
-            const createdFilter = action.payload === 'created'
-                ? state.pokemons.filter((e) => e.created)
-                : state.pokemons.filter((e) => !e.created)
-                console.log("Filtered Pokemons:", createdFilter);
-            return {
-                ...state,
-                pokemons: action.payload === 'All' ? state.pokemons : createdFilter
+            let filteredPokemons = [...state.pokemons]
+            if(action.payload === 'created'){
+                filteredPokemons = state.pokemonsBackUp.filter((pokemon) => isNaN(pokemon.id))
+            } else if(action.payload === "api"){
+                filteredPokemons = state.pokemonsBackUp.filter((pokemons) => !isNaN(pokemons.id))
+            } else {
+                filteredPokemons = state.pokemonsBackUp
             }
-
+            console.log("filtrao", filteredPokemons)
+            return{
+                ...state,
+                pokemons: filteredPokemons
+            }
+            
         case FILTER_BY_TYPE:
-            //console.log("Filter By Type:", action.payload);
+            
             let filterType;
             if (action.payload === "All") {
                 filterType = state.pokemons;
             } else {
-                filterType = state.pokemons.filter((e) =>
+                filterType = state.pokemonsBackUp.filter((e) =>
                     e.types.includes(action.payload)
                 );
             }

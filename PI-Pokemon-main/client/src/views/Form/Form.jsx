@@ -2,20 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import validation from "./validation";
-import { createPokemon, getTypes} from "../../redux/actions";
+import { createPokemon, getTypes } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Form.module.css"
 
 
+
 const Form = () => {
 
-    
+
     const dispatch = useDispatch()
     const types = useSelector((state) => state.types)
 
     const [input, setInput] = useState({
         name: "",
-        image: "",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-56YdThnTlX2LJ4ixqaLzbfPFOPTzkE1H4Q&usqp=CAU",
         hp: "",
         attack: "",
         defense: "",
@@ -30,6 +31,19 @@ const Form = () => {
     }, [dispatch])
 
     const [errors, setErrors] = useState({});
+
+    /*const disable = () => {
+        let disabled = true;
+        for (let error in errors) {
+            //console.log("soy error", error);
+            if (errors[error] === "" || errors[error].length === 0) disabled = false;
+            else {
+                disabled = true;
+                break;
+            }
+        }
+        return disabled;
+    };*/
 
 
     const handleChange = (e) => {
@@ -248,9 +262,14 @@ const Form = () => {
                     </div>
 
                     <div className={style.crearP}>
-                    <button type="submit" name="submit" className={style.buttonCrear}>
-                        <p>CREALO! </p>
-                    </button>
+                        <button
+                            type="submit"
+                            name="submit"
+                            className={style.buttonCrear}
+                        //disabled={disable()}
+                        >
+                            <p className={style.go}>CREAR!</p>
+                        </button>
                     </div>
 
                 </form>

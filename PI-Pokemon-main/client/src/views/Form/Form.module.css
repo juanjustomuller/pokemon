@@ -1,13 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .containerF {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
-    /*background-image: url('../../img/fondo-estilo-comico-diseno-plano_52683-53321.avif'); */
+    background-image: url('../../img/fondo-estilo-comico-diseno-plano_52683-53321.avif');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
+    
 }
+
 
 .formContainer {
     background-color: #fff;
@@ -17,6 +26,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
 }
 
 .formTitle {
@@ -29,6 +39,7 @@
 
 .inputContainer {
     position: relative;
+    /*border: 3px solid brown;*/
 }
 
 .inputContainer input,
@@ -70,11 +81,12 @@
 }
 
 .buttonCrear {
+    margin-top: 20px;
     position: relative;
     width: 165px;
     height: 56px;
     overflow: hidden;
-    border: 1px solid black;
+    border: 4px solid black;
     border-radius: 50px;
     padding-left: 35px;
     box-shadow: 2.9px 2.9px 2.2px rgba(0, 0, 0, 0.019),
@@ -98,7 +110,25 @@
     cursor: pointer;
     border: none;
     background: #fff;
-    margin-top: 50px;
-    display: flex;
+    margin-top: 20px;
+    margin-left: 10rem;
+}
+
+.buttonVolver:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+.go {
+    position: absolute;
+    top: 18%;
+    font-size: 20px;
+    font-weight: 50;
+    letter-spacing: 1px;
     align-items: center;
-  }
+}
+
+.buttonCrear:hover .go {
+    cursor: pointer;
+
+}

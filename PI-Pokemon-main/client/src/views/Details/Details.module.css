@@ -13,6 +13,37 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100%;
+}
+
+.spanBo {
+    text-decoration: none;
+}
+
+.buttonVolver {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    margin-top: 20px;
+    margin-left: 30rem;
+}
+
+.buttonVolver:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+.volverSpan {
+    margin-bottom: -9px;
 }
 
 .bodyDetail {
@@ -32,11 +63,45 @@
     border-radius: 20px;
     box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
 }
-
 .containerDetail {
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+}
+
+.backgroundDetail {
+    text-align: center;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(166deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(147, 147, 147, 1) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+
+}
+
+.imageDetail {
+    width: 300px;
+    height: auto;
+    margin-bottom: 70px;
+}
+
+.contentDetail {
+    background: whitesmoke;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+    
+    margin-top: 8px;
 }
 
 .pokemonNameDetail {
@@ -46,12 +111,15 @@
     padding: 10px;
     color: rgb(71, 71, 72);
     text-transform: capitalize;
+    position: relative;
 }
 
 .pokemonType {
     /*background: rgb(197, 24, 24);*/
     padding: 7px;
-    margin-top: 15px;
+    margin-left: 110px;
+    margin-bottom: 55px;
+    margin-top: 30px;
     color: whitesmoke;
     border-radius: 5px;
     width: 200px;
@@ -62,6 +130,7 @@
     text-transform: capitalize;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
 }
 
 .pokemonStats {
@@ -87,64 +156,22 @@ span {
     padding-bottom: 10px;
 }
 
-.buttonVolver {
-    display: flex;
-    height: 3em;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: #eeeeee4b;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
-    border: none;
-    background: #fff;
-    margin-top: 50px;
-}
-
-.buttonVolver:hover>svg {
-    font-size: 1.2em;
-    transform: translateX(-5px);
-}
-
-.buttonVolver:hover {
-    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
-    transform: translateY(-2px);
-}
-
-.spanBo {
-    text-decoration: none;
-}
-
-.imageDetail {
-    width: 300px;
-    height: auto;
-    margin-bottom: 70px;
-}
-
-.backgroundDetail {
-    text-align: center;
-    width: 350px;
-    height: 350px;
+.containerLoading {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(166deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(147, 147, 147, 1) 100%);
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+    flex-direction: column;
 }
 
-.contentDetail {
-    height: 100%;
-    background: whitesmoke;
-    padding: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(190, 190, 190),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
-}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,13 +11,14 @@ import style from "./Home.module.css";
 const Home = () => {
 
     const dispatch = useDispatch();
-    const pokemons = useSelector((state) => state.pokemons)
-    const [orden, setOrden] = useState("");  //estado local vacio, q solo lo voy a usar es para cuando yo setee esta pagina me modifique el estado local y se renderice
+    const pokemons = useSelector((state) => state.pokemons)   //en pokemons traeme el estado de pokemons
+    const [orden, setOrden] = useState("");   //estado local vacio, q solo lo voy a usar es para cuando yo setee esta pagina me modifique el estado local y se renderice
     const allTypes = useSelector((state) => state.types);
+    
     //console.log("All Types:", allTypes);
     ////////////////////////////PAGINADO////////////////////////
     const [currentPage, setCurrentPage] = useState(1);                  //declaro estado local en el q le paso la pagina actual,  y cual va a ser la pag actual (va a arrancar en 1)
-    const [pokemonsPerPage, setPokemonsPerPage] = useState(12);         //declaro otro estado local que tengo la catn de pokemons por pagina y va a arrancar en 12
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(12);         //declaro otro estado local que tengo la cant de pokemons por pagina y va a arrancar en 12
     const indexOfLastPokemon = currentPage * pokemonsPerPage;           //seteo el indice del ultimo pokemon, y le digo sobre la pag actual mutiplicame la cant de pokemon * pagina
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;   //seteo el indice del primer pokemon, y me lo va a dar la resta entre el indice del ultimo poquemon menos los pokemon por pagina
     const currentPokemons = pokemons.slice(                             //finalmente me declaro la constante donde se va a ir guardando cuales son los pokemons que hay q renderizar dependiendo de la pagina
@@ -28,18 +29,20 @@ const Home = () => {
         setCurrentPage(pageNumber)
     }
     ///////////////////////////////////////////////////////////////////
-
+    
     useEffect(() => {
         dispatch(getPokemons());
         dispatch(getTypes());
     }, [dispatch])
-    //cuando se monta, que haga el dispatch
+    //cuando se monta, que haga el dispatch (despacho la accion)
     // useEffect           useDispatch
 
     ////////////////FILTROS//////////////////////////////////////////////////////////////////////////
+
     const handlefilterCreated = (event) => {
         dispatch(filterCreated(event.target.value))
-        console.log("Pokemons after filterCreated:", pokemons);
+        setCurrentPage(1);
+
     }
 
 
@@ -48,6 +51,7 @@ const Home = () => {
         if (e.target.value !== "Tipos") {
             dispatch(filterByType(e.target.value));
         }
+        setCurrentPage(1);
     };
     ////////////////////////////////////////ORDENAMIENTOS////////////////////////////////////////////////////////
 
@@ -82,8 +86,8 @@ const Home = () => {
     return (
         <div className={style.homeContainer}>
 
-<div>
-                <button className={style.reloadButton} onClick={(e) => { handleClick(e)}}>
+            <div className={style.containerButton}>
+                <button className={style.recargar} onClick={(e) => { handleClick(e)}} >
                 <span className={style.reloadIcon}>⟳</span> Recargar Pokémon
                 </button>
             </div>
@@ -130,7 +134,9 @@ const Home = () => {
 
 
             <div className={`${style.CardsContainer} ${style.cardRow}`}>
+                
             {currentPokemons?.map((elem, index) => {
+                //console.log("Current Pokemons:", currentPokemons);
                 return (
                     <Link key={index} to={`/detail/${elem.id}`} className={style.cardLink}>
                         <CardsContainer
@@ -147,7 +153,7 @@ const Home = () => {
             })}
             </div>
             <div className={style.paginadoContainer}>
-            <Paginado
+            <Paginado className={style.paginado}
                 pokemonsPerPage={pokemonsPerPage}
                 pokemons={pokemons.length}
                 paginado={paginado} />
@@ -157,6 +163,7 @@ const Home = () => {
 }
 
 export default Home;
+
 
 
 

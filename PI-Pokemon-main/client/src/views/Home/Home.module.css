@@ -9,6 +9,10 @@
     background-attachment: fixed;
 }
 
+.containerButton{
+  margin-right: 65rem;
+}
+
 
 .filtersContainer {
     display: flex;
@@ -18,37 +22,56 @@
   }
   
   .filterSelect {
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin: 0 5px;
+    margin: 10px;
+    width: 80px;
+    height: 30px;
+    border: 3px solid #ffc107;
+    border-radius: 45px;
+    transition: all 0.3s;
     cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
+    background: white;
+    font-size: 0.9em;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
+      rgba(0, 0, 0, 0.3) 5px 1px 10px 3px, rgba(1, 0, 0, 0.2) 0px -1px 2px inset;
   }
   
 
   .filterSelect:hover {
-    border: 2px solid #ffc107;
+    background: #ffc107;
+    color: white;
+    font-size: 1em;
   }
 
-  .reloadButton {
-    background-color: #000;
-    color: #ccc;
+  .recargar {
+    color: white;
+    background-color: rgb(39, 39, 39);
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    padding-left: 10px;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
     border: none;
-    border-radius: 20px;
-    padding: 5px 10px;
+    height: 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
+      rgba(0, 0, 0, 0.3) 5px 1px 10px 3px, rgba(1, 0, 0, 0.2) 0px -1px 2px inset;
+  }
+
+  .recargar:hover {
     cursor: pointer;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
-    position: absolute;
-    top: 100px;
-    left: 10px;
+    background-color: #333;
   }
   
   .reloadIcon {
-    margin-right: 5px;
+    margin-top: 8px;
   }
   .cardsContainer {
     display: flex;
@@ -68,8 +91,8 @@
   .cardRow {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    max-width: 1200px; /* Ajusta este valor según tu diseño */
+    gap: 10px;
+    max-width: -100px; /* Ajusta este valor según tu diseño */
     margin: 0 auto;
 }
 
@@ -78,4 +101,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px; /* Ajusta este valor según tu diseño */
+}
+
+
+.paginado:hover {
+  cursor: pointer;
+  background-color: #333;
 }

@@ -34,9 +34,8 @@ export const validation = (input) => {
     }   
 
     if (input.types.length < 1) {
-        errors.types = "Debes elegir al menos 1 tipo";
-    } else if (input.types.length > 2) {
-        errors.types = "No puedes elegir más de 2 tipos";
+        errors.types = "Debes elegir al menos 2 tipos";
+    
     }
 
     return errors;

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import style from "./Details.module.css";
 
 
+
 const Detail = () => {
 
     let { id } = useParams();
@@ -15,6 +16,12 @@ const Detail = () => {
 
     useEffect(() => {
         dispatch(getDetail(id))
+        return () => {
+            dispatch({
+                type: "GET_DETAIL",
+                payload: {}
+            })
+        }
     }, [dispatch, id])
 
     const detailPokemons = useSelector((state) => state.detail);
@@ -49,65 +56,77 @@ const Detail = () => {
 
     return (
         <div className={style.containerCompleto}>
+            <Link className={style.spanBo} to="/home">
+                <button className={style.buttonVolver}>
+                    <span className={style.volverSpan}>Volver</span>
+                </button>
+            </Link>
             {
                 detailPokemons.length > 0 ? (
                     <div className={style.bodyDetail}>
-                        <div className={style.contentDetail}
+                        <div
+                            className={style.conteinerDetail}
                             style={{
                                 backgroundColor: typesColors[detailPokemons[0]?.types[0]],
-                            }}>
+                            }}
+                        >
 
                             <div className={style.backgroundDetail}>
-                                <img className={style.imageDetail} src={detailPokemons[0].image} alt={detailPokemons[0].name} />
+                                <img
+                                    className={style.imageDetail}
+                                    src={detailPokemons[0].image}
+                                    alt={detailPokemons[0].name}
+                                />
                             </div>
+
                             <div className={style.contentDetail}>
-
-                            <h1 className={style.pokemonNameDetail}>{detailPokemons[0].name}</h1>
-                            
-
-                            <div className={style.pokemonStats}>
-
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span>HP: </span> {detailPokemons[0]?.hp}
-                                </p>
-
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span>ATTACK: </span>{detailPokemons[0]?.attack}
-                                </p>
-
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span>DEFENSE: </span>{detailPokemons[0]?.defense}
-                                </p>
-
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span>SPEED: </span>{detailPokemons[0]?.speed}
-                                </p>
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span style={{ color: "black" }}>HEIGHT: </span>{detailPokemons[0]?.height}
-                                </p>
-
-                                <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
-                                    <span>WEIGHT: </span>{detailPokemons[0]?.weight}
-                                </p>
+                                <h1 className={style.pokemonNameDetail}>
+                                    {detailPokemons[0].name}
+                                </h1>
 
                                 <h3 className={style.pokemonType}
-                                style={{
-                                    backgroundColor: typesColors[detailPokemons[0]?.types[0]],
-                                }}>
+                                    style={{
+                                        backgroundColor: typesColors[detailPokemons[0]?.types[0]],
+                                    }}>
                                     <p>TYPE: </p>{detailPokemons[0]?.types.join(" ")}
-                                    </h3>
+                                </h3>
+
+                                <div className={style.pokemonStats}>
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span>HP: </span> {detailPokemons[0]?.hp}
+                                    </p>
+
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span>ATTACK: </span>{detailPokemons[0]?.attack}
+                                    </p>
+
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span>DEFENSE: </span>{detailPokemons[0]?.defense}
+                                    </p>
+
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span>SPEED: </span>{detailPokemons[0]?.speed}
+                                    </p>
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span style={{ color: "black" }}>HEIGHT: </span>{detailPokemons[0]?.height}
+                                    </p>
+
+                                    <p style={{ backgroundColor: typesColors[detailPokemons[0]?.types[0]], }}>
+                                        <span>WEIGHT: </span>{detailPokemons[0]?.weight}
+                                    </p>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 ) : (
-                    <p>...Loading</p>
+                    <div className={style.containerLoading}>
+                        <p className={style.loading}>...Loading</p>
+                    </div>
                 )
             }
 
-            <Link className={style.spanBo} to="/home">
-                <button className={style.buttonVolver}>Volver</button>
-            </Link>
+
         </div>
     );
 }

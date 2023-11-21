@@ -33,7 +33,7 @@ export const createPokemon = (info) => {
             const response = await axios.post("http://localhost:3001/pokemons/", info)
             
             alert("El pokemon fue creado correctamente");
-            console.log("RESPONSE:", response)
+            //console.log("RESPONSE:", response)
             return response
         } catch (error) {
             console.log(error)
@@ -51,11 +51,12 @@ export const getTypes = () => {
 };
 
 //FILTRO POR CREADO EN DB O EN API
-export const filterCreated = (payload) => {
+export const filterCreated = (payload) => {console.log(payload)
     return {
         type: FILTER_CREATED,
         payload
     }
+    
 }
 
 //FILTRO POR TIPOS
